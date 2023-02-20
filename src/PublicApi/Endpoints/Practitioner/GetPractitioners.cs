@@ -2,7 +2,7 @@ using ApplicationCore.Interfaces;
 
 namespace PublicApi.Endpoints.Practitioner;
 
-public static class GetAll
+public static class GetPractitioners
 {
     public static RouteGroupBuilder MapGetAllPractitioners(this RouteGroupBuilder group)
     {

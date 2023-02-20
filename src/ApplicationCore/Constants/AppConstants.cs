@@ -4,12 +4,17 @@ public static class AppConstants
 {
     public static class ErrorMessages
     {
-        public static readonly string DataRead = "Data read error";
+        public const string DataRead = "Data read error";
     }
 
     public static class FilePath
     {
-        public static readonly string Practitioners = @"./../Infrastructure/Data/practitioners.json";
-        public static readonly string Appointments = @"./../Infrastructure/Data/appointments.json";
+        public const string Practitioners = @"./../Infrastructure/Data/practitioners.json";
+        public const string Appointments = @"./../Infrastructure/Data/appointments.json";
+    }
+
+    public static class AllowedSpecificationOrigns
+    {
+        public const string LocalProjectPath = "http://localhost:5173/";
     }
 }

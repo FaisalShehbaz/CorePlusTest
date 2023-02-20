@@ -8,16 +8,21 @@ interface IProps {
 
 const Practitioner: React.FunctionComponent<IProps> = props => {
   return (
-    <div className="praclist">Remaining Practitioners 
+    <div className="praclist">
+      <div className="p-2 bg-secondary shadow-sm">
+        Remaining Practitioners
+      </div>
       <ol>
         {props.practitioner.length > 0 ? (
               props.practitioner.map(i => (
-                <li>
+                <li className="p-1 pl-2">
                   <button onClick={() => props.onPractitionerClick(i)}>{i["name"]}</button>
                 </li>
               ))
             ) : (
-              <li> <a href="#" > no Practitioners found </a> </li>
+              <li className="p-1 pl-2"> 
+                <a href="#" > no Practitioners found </a> 
+              </li>
             )}
       </ol>
     </div>
