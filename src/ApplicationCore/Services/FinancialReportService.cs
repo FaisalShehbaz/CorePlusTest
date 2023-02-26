@@ -83,7 +83,7 @@ public class FinancialReportService : IFinancialReportService
         var appointmentFilter = appointmentData
            .Where(
            x => (practitionerId != null && x.practitioner_id == practitionerId.Value)
-           && DateOnly.Parse(x.date) >= startDate && DateOnly.Parse(x.date) <= endDate)
+           && DateOnly.Parse(x.date) >= startDate && DateOnly.Parse(x.date) <= endDate && DateOnly.Parse(x.date).Month == month)
            .Select(
                 s => new PractitionerFinancialDetailReportDto(
                     s.practitioner_id,

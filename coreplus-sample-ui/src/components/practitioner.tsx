@@ -15,7 +15,7 @@ const Practitioner: React.FunctionComponent<IProps> = props => {
       <ol>
         {props.practitioner.length > 0 ? (
               props.practitioner.map(i => (
-                <li className="p-1 pl-2">
+                <li key={i["id"]} className="p-1 pl-2">
                   <button onClick={() => props.onPractitionerClick(i)}>{i["name"]}</button>
                 </li>
               ))

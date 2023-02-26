@@ -5,12 +5,15 @@ import Supervisors from './components/supervisor';
 import { variables } from './constants/variables';
 import { IUser } from "./components/interface";
 import "./app.css";
+import { getPractitionerApi, getSupervisorsApi } from "./api/users";
+import Report from "./components/report";
 
 function App() {
 
 
   const [practitioner, setPractitioner] = useState<IUser[]>([]);
   const [supervisor, setSupervisor] = useState<IUser[]>([]);
+  const [selectedPractitioner, setSelectedPractitioner] = useState<IUser>({});
 
 
   const refreshList = (user: IUser) => {
@@ -18,7 +21,7 @@ function App() {
   }
   
   const onPractitionerClick = (user: IUser) => {
-    refreshList(user);
+    setSelectedPractitioner(user);
   };
 
   useEffect(() => {
@@ -41,9 +44,12 @@ function App() {
       <div className="header flex flex-row items-center p-2 bg-primary shadow-sm">
         <p className="font-bold text-lg">coreplus</p>
       </div>
-      <Supervisors supervisor={supervisor} onPractitionerClick={onPractitionerClick} />
+      <Supervisors currentPractitioner={selectedPractitioner} supervisor={supervisor} onPractitionerClick={onPractitionerClick} />
       <Practitioners practitioner={practitioner} onPractitionerClick={onPractitionerClick} />
-      <div className="pracinfo">Practitioner Report UI</div>
+      {
+        selectedPractitioner.id &&
+        <Report practitioner={selectedPractitioner} />
+      }
     </div>
   );
 }

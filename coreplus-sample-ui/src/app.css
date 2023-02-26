@@ -1,3 +1,4 @@
+
 .appshell {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -24,3 +25,33 @@
 .bg-secondary {
   background-color: #6c757d!important;
 }
+
+.text-black{
+  color: black;
+}
+
+.rdrInputRangeInput:focus, .rdrInputRangeInput:hover ,.rdrInputRangeInput {
+color: white !important;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+}
+td {
+  border-bottom: 1px solid #bababa;
+}
+thead {
+  border-bottom: 2px solid #bababa;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.5em 0.5em;
+}
+/* td:last-child {
+  width: 40%;
+} */
+.clearfix{clear: both;}
